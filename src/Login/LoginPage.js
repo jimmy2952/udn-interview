@@ -49,7 +49,7 @@ class NormalLoginForm extends React.Component {
             htmlType="submit"
             className="login-form-button"
           >
-            Log in
+            登入
           </Button>
         </Form.Item>
       </Form>
