@@ -1,0 +1,58 @@
+section {
+  padding: 5vh 2vw;
+  background-color: #eeeeee;
+}
+
+.searchContainer {
+  padding-bottom: 3vh;
+  border-radius: 10px;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0px 16px 52px -27px rgba(171, 171, 171, 1);
+  -moz-box-shadow: 0px 16px 52px -27px rgba(171, 171, 171, 1);
+  box-shadow: 0px 16px 52px -27px rgba(171, 171, 171, 1);
+}
+
+.searchInputContainer {
+  padding: 3vh 2vw;
+}
+
+.searchInputContainer span {
+  font-weight: 700;
+  margin: 0 1vw;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.buttonContainer button {
+  margin: 0 0.5vw;
+}
+
+.dataContainer {
+  margin-top: 3vh;
+  border-radius: 10px;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0px 16px 52px -27px rgba(171, 171, 171, 1);
+  -moz-box-shadow: 0px 16px 52px -27px rgba(171, 171, 171, 1);
+  box-shadow: 0px 16px 52px -27px rgba(171, 171, 171, 1);
+}
+
+.description {
+  display: flex;
+  align-items: center;
+  -webkit-box-shadow: 0px 16px 52px -27px rgba(171, 171, 171, 1);
+  -moz-box-shadow: 0px 16px 52px -27px rgba(171, 171, 171, 1);
+  box-shadow: 0px 16px 52px -27px rgba(171, 171, 171, 1);
+}
+
+.description p {
+  margin: 1rem 2rem;
+  font-size: 1rem;
+}
+
+.tableContainer {
+  padding: 0 2rem;
+  border-radius: 10px;
+}
