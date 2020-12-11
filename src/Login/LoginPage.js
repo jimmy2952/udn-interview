@@ -1,19 +1,26 @@
-import React from "react";
-import { useHistory } from "react-router-dom"
-import { Form, Icon, Input, Button, Checkbox } from "antd";
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
+import { Form, Icon, Input, Button } from "antd";
 
 import logoImage from "../assets/udnLogo.jpg";
 import "./LoginPage.css";
 
 const NormalLoginForm = (props) => {
-  const history = useHistory()
+  const history = useHistory();
+  const [error, setError] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     props.form.validateFields((err, values) => {
-      if (!err) {
+      if (
+        !err &&
+        values.username === "test1@shopping.com" &&
+        values.password === "Aa123456"
+      ) {
         console.log("Received values of form: ", values);
-        history.push("/products-list")
+        history.push("/products-list");
+      } else {
+        setError(true);
       }
     });
   };
@@ -22,7 +29,7 @@ const NormalLoginForm = (props) => {
   return (
     <Form onSubmit={handleSubmit} className="login-form">
       <div className="logoContainer">
-        <img src={logoImage} />
+        <img src={logoImage} alt="聯合智網股份有限公司" />
         <p>聯合智網股份有限公司</p>
       </div>
       <Form.Item>
@@ -31,7 +38,7 @@ const NormalLoginForm = (props) => {
             {
               required: true,
               message: "使用者格式不符",
-              pattern: /^[a-zA-Z][a-zA-Z0-9]{4,}$/,
+              pattern: /^[a-zA-Z][a-zA-Z0-9#?!@$.%^&*-]{4,}$/,
             },
           ],
         })(
@@ -58,6 +65,7 @@ const NormalLoginForm = (props) => {
           />
         )}
       </Form.Item>
+      {error && <p style={{ color: "red" }}>帳號或密碼有誤！</p>}
       <Form.Item>
         <Button type="primary" htmlType="submit" className="login-form-button">
           登入
